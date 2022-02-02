@@ -6,10 +6,11 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 const userRouter = require('./routes/user');
+const postRouter = require('./routes/post');
+
 app.use('/api/user/',userRouter);
-app.get('/',(req,res)=>{
-    res.send("hello")
-});
+app.use('/api/post',postRouter);
+
 app.listen(5000, ()=>{
     console.log("listening on port 5000");
 });

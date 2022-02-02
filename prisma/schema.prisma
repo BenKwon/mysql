@@ -12,7 +12,7 @@ model post {
   title      String
   post       String   @db.VarChar(500)
   created_at DateTime @default(now())
-  update_at  DateTime
+  updated_at  DateTime @updatedAt
   user_id    Int
   user       user     @relation(fields: [user_id], references: [id])
 
